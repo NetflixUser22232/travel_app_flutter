@@ -26,11 +26,11 @@ class _LoginState extends State<Login> {
               child: Image.asset(
                 "assets/images/login.png",
                 width: width,
-                height: height * 0.4,
+                height: height * 0.36,
                 fit: BoxFit.cover,
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: height * 0.022),
             Padding(
               padding: EdgeInsets.only(left: 20),
               child: Text(
@@ -39,7 +39,7 @@ class _LoginState extends State<Login> {
               ),
             ),
             // Email section
-            SizedBox(height: 20),
+            SizedBox(height: height * 0.022),
             Padding(
               padding: EdgeInsets.only(left: 20),
               child: Text(
@@ -52,7 +52,7 @@ class _LoginState extends State<Login> {
               ),
             ),
             // Text field for email
-            SizedBox(height: 10),
+            SizedBox(height: height * 0.011),
             Container(
               margin: EdgeInsets.only(left: 20, right: 20),
               decoration: BoxDecoration(
@@ -66,7 +66,7 @@ class _LoginState extends State<Login> {
               ),
             ),
             // Section for password
-            SizedBox(height: 20),
+            SizedBox(height: height * 0.022),
             Padding(
               padding: EdgeInsets.only(left: 20),
               child: Text(
@@ -79,7 +79,7 @@ class _LoginState extends State<Login> {
               ),
             ),
             // Text field for password
-            SizedBox(height: 10),
+            SizedBox(height: height * 0.011),
             Container(
               margin: EdgeInsets.only(left: 20, right: 20),
               decoration: BoxDecoration(
@@ -93,7 +93,7 @@ class _LoginState extends State<Login> {
               ),
             ),
             // For forget password
-            SizedBox(height: 10),
+            SizedBox(height: height * 0.011),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -110,7 +110,7 @@ class _LoginState extends State<Login> {
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            SizedBox(height: height * 0.022),
             Container(
               height: 50,
               width: width,
@@ -130,7 +130,7 @@ class _LoginState extends State<Login> {
                 ),
               ),
             ),
-            SizedBox(height: 5),
+            SizedBox(height: height * 0.006),
             Center(
               child: Text(
                 "or",
@@ -141,16 +141,55 @@ class _LoginState extends State<Login> {
                 ),
               ),
             ),
+            SizedBox(height: height * 0.006),
             Container(
+              height: 50,
+              margin: EdgeInsets.only(left: 20, right: 20),
+              decoration: BoxDecoration(
+                color: Color.fromARGB(131, 116, 121, 127),
+                borderRadius: BorderRadius.circular(30),
+              ),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
                     "assets/images/google.png",
-                    width: 40,
-                    height: 40,
+                    width: 30,
+                    height: 30,
                     fit: BoxFit.cover,
+                    color: Color(0xfffea720),
+                  ),
+                  SizedBox(width: 10),
+                  Text(
+                    "Login with Google",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ],
+              ),
+            ),
+            SizedBox(height: height * 0.022),
+            Center(
+              child: Text(
+                "Don't have an account",
+                style: TextStyle(
+                  color: const Color.fromARGB(173, 255, 255, 255),
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+            Center(
+              child: Text(
+                "Signup",
+                style: TextStyle(
+                  color: Color(0xfffea720),
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
           ],
