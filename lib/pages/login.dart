@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_travel_app/pages/signup.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -13,6 +14,7 @@ class _LoginState extends State<Login> {
     var size = MediaQuery.of(context).size;
     var width = size.width;
     var height = size.height;
+
     return Scaffold(
       backgroundColor: Colors.black,
       body: Container(
@@ -26,11 +28,11 @@ class _LoginState extends State<Login> {
               child: Image.asset(
                 "assets/images/login.png",
                 width: width,
-                height: height * 0.4,
+                height: height * 0.36,
                 fit: BoxFit.cover,
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: height * 0.022),
             Padding(
               padding: EdgeInsets.only(left: 20),
               child: Text(
@@ -39,7 +41,8 @@ class _LoginState extends State<Login> {
               ),
             ),
             // Email section
-            SizedBox(height: 20),
+            // For height 20
+            SizedBox(height: height * 0.022),
             Padding(
               padding: EdgeInsets.only(left: 20),
               child: Text(
@@ -52,7 +55,8 @@ class _LoginState extends State<Login> {
               ),
             ),
             // Text field for email
-            SizedBox(height: 10),
+            // For height 10
+            SizedBox(height: height * 0.011),
             Container(
               margin: EdgeInsets.only(left: 20, right: 20),
               decoration: BoxDecoration(
@@ -66,7 +70,7 @@ class _LoginState extends State<Login> {
               ),
             ),
             // Section for password
-            SizedBox(height: 20),
+            SizedBox(height: height * 0.022),
             Padding(
               padding: EdgeInsets.only(left: 20),
               child: Text(
@@ -79,9 +83,9 @@ class _LoginState extends State<Login> {
               ),
             ),
             // Text field for password
-            SizedBox(height: 10),
+            SizedBox(height: height * 0.011),
             Container(
-              margin: EdgeInsets.only(left: 20, right: 20),
+              margin: EdgeInsets.only(left: width * 0.045, right: 20),
               decoration: BoxDecoration(
                 border: Border.all(
                   color: const Color.fromARGB(173, 255, 255, 255),
@@ -93,7 +97,7 @@ class _LoginState extends State<Login> {
               ),
             ),
             // For forget password
-            SizedBox(height: 10),
+            SizedBox(height: height * 0.011),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -110,9 +114,9 @@ class _LoginState extends State<Login> {
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            SizedBox(height: height * 0.022),
             Container(
-              height: 50,
+              height: height * 0.055,
               width: width,
               margin: EdgeInsets.only(left: 20, right: 20),
               decoration: BoxDecoration(
@@ -130,6 +134,8 @@ class _LoginState extends State<Login> {
                 ),
               ),
             ),
+            // For height 5
+            SizedBox(height: height * 0.006),
             Center(
               child: Text(
                 "or",
@@ -137,6 +143,65 @@ class _LoginState extends State<Login> {
                   color: Colors.white,
                   fontSize: 24,
                   fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+            SizedBox(height: height * 0.006),
+            Container(
+              height: height * 0.055,
+              margin: EdgeInsets.only(left: 20, right: 20),
+              decoration: BoxDecoration(
+                color: Color.fromARGB(131, 116, 121, 127),
+                borderRadius: BorderRadius.circular(30),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    "assets/images/google.png",
+                    width: 30,
+                    height: 30,
+                    fit: BoxFit.cover,
+                    color: Color(0xfffea720),
+                  ),
+                  SizedBox(width: 10),
+                  Text(
+                    "Login with Google",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: height * 0.011),
+            Center(
+              child: Text(
+                "Don't have an account",
+                style: TextStyle(
+                  color: const Color.fromARGB(173, 255, 255, 255),
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Signup()),
+                );
+              },
+              child: Center(
+                child: Text(
+                  "Signup",
+                  style: TextStyle(
+                    color: Color(0xfffea720),
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),

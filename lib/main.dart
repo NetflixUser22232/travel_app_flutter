@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_travel_app/login.dart';
-import 'package:flutter_travel_app/pages/home_page.dart';
-import 'package:flutter_travel_app/pages/top_places.dart';
+import 'package:flutter_travel_app/pages/signup.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +16,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Login(),
+      home: Signup(),
+      //  Login(),
       // TopPlaces(),
       // HomePage(),
     );
