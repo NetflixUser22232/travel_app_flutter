@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_travel_app/pages/login.dart';
 import 'package:flutter_travel_app/pages/signup.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: Signup(),
-      //  Login(),
+      // Login(),
       // TopPlaces(),
       // HomePage(),
     );
