@@ -1,6 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_travel_app/pages/home_page.dart';
 import 'package:flutter_travel_app/pages/login.dart';
+import 'package:flutter_travel_app/services/database.dart';
+import 'package:flutter_travel_app/services/shared_preferences.dart';
 import 'package:random_string/random_string.dart';
 
 class Signup extends StatefulWidget {
@@ -17,9 +20,7 @@ class _SignupState extends State<Signup> {
   TextEditingController emailController = TextEditingController();
 
   registration() async {
-    if (password != null &&
-        nameController.text != "" &&
-        emailController.text != "") {
+    if (nameController.text != "" && emailController.text != "") {
       try {
         UserCredential userCredential = await FirebaseAuth.instance
             .createUserWithEmailAndPassword(email: email, password: password);
@@ -31,6 +32,27 @@ class _SignupState extends State<Signup> {
               "https://firebasestorage.googleapis.com/v0/b/barberapp-ebcc1.appspot.com/o/icon1.png?alt=media&token=0fad24a5-a01b-4d67-b4a0-676fbc75b34a",
           "Id": id,
         };
+        await SharedpreferenceHelper().saveUserDisplayName(nameController.text);
+        await SharedpreferenceHelper().saveUserEmail(emailController.text);
+        await SharedpreferenceHelper().saveUserId(id);
+        await SharedpreferenceHelper().saveUserImage(
+          "https://firebasestorage.googleapis.com/v0/b/barberapp-ebcc1.appspot.com/o/icon1.png?alt=media&token=0fad24a5-a01b-4d67-b4a0-676fbc75b34a",
+        );
+        await DatabaseMethods().assUserDetails(userInfoMap, id).then((value) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              backgroundColor: Colors.green,
+              content: Text(
+                "Registered Successfully",
+                style: TextStyle(fontSize: 20, color: Colors.green),
+              ),
+            ),
+          );
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => HomePage()),
+          );
+        });
       } on FirebaseAuthException catch (e) {
         if (e.code == "weak-password") {
           ScaffoldMessenger.of(context).showSnackBar(
@@ -104,6 +126,7 @@ class _SignupState extends State<Signup> {
             // Text field for password
             SizedBox(height: height * 0.011),
             Container(
+              padding: EdgeInsets.only(left: 30),
               margin: EdgeInsets.only(left: width * 0.045, right: 20),
               decoration: BoxDecoration(
                 border: Border.all(
@@ -112,6 +135,8 @@ class _SignupState extends State<Signup> {
                 borderRadius: BorderRadius.circular(30),
               ),
               child: TextField(
+                cursorColor: Colors.white,
+                controller: nameController,
                 decoration: InputDecoration(border: InputBorder.none),
               ),
             ),
@@ -133,6 +158,7 @@ class _SignupState extends State<Signup> {
             // For height 10
             SizedBox(height: height * 0.011),
             Container(
+              padding: EdgeInsets.only(left: 30),
               margin: EdgeInsets.only(left: 20, right: 20),
               decoration: BoxDecoration(
                 border: Border.all(
@@ -141,6 +167,8 @@ class _SignupState extends State<Signup> {
                 borderRadius: BorderRadius.circular(30),
               ),
               child: TextField(
+                cursorColor: Colors.white,
+                controller: emailController,
                 decoration: InputDecoration(border: InputBorder.none),
               ),
             ),
@@ -160,6 +188,7 @@ class _SignupState extends State<Signup> {
             // Text field for password
             SizedBox(height: height * 0.011),
             Container(
+              padding: EdgeInsets.only(left: 30),
               margin: EdgeInsets.only(left: width * 0.045, right: 20),
               decoration: BoxDecoration(
                 border: Border.all(
@@ -168,6 +197,8 @@ class _SignupState extends State<Signup> {
                 borderRadius: BorderRadius.circular(30),
               ),
               child: TextField(
+                cursorColor: Colors.white,
+                controller: passwordController,
                 decoration: InputDecoration(border: InputBorder.none),
               ),
             ),
