@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_travel_app/pages/login.dart';
 import 'package:flutter_travel_app/pages/signup.dart';
 
 void main() {
