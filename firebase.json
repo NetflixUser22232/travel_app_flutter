@@ -1,11 +1,1 @@
-{
-  "firestore": {
-    "database": "(default)",
-    "location": "asia-south1",
-    "rules": "firestore.rules",
-    "indexes": "firestore.indexes.json"
-  },
-  "storage": {
-    "rules": "storage.rules"
-  }
-}
+{"firestore":{"database":"(default)","location":"asia-south1","rules":"firestore.rules","indexes":"firestore.indexes.json"},"storage":{"rules":"storage.rules"},"flutter":{"platforms":{"android":{"default":{"projectId":"travelers-app-flutter","appId":"1:1079923136353:android:3654e9e7fbe05e2c3dd720","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"travelers-app-flutter","configurations":{"android":"1:1079923136353:android:3654e9e7fbe05e2c3dd720","ios":"1:1079923136353:ios:6895a592534bb4373dd720","macos":"1:1079923136353:ios:6895a592534bb4373dd720","web":"1:1079923136353:web:8a09692e32873f813dd720","windows":"1:1079923136353:web:9ff5d4a411be66b93dd720"}}}}}}
