@@ -136,6 +136,7 @@ class _SignupState extends State<Signup> {
               ),
               child: TextField(
                 cursorColor: Colors.white,
+                style: TextStyle(color: Colors.white60),
                 controller: nameController,
                 decoration: InputDecoration(border: InputBorder.none),
               ),
@@ -168,6 +169,7 @@ class _SignupState extends State<Signup> {
               ),
               child: TextField(
                 cursorColor: Colors.white,
+                style: TextStyle(color: Colors.white60),
                 controller: emailController,
                 decoration: InputDecoration(border: InputBorder.none),
               ),
@@ -197,7 +199,9 @@ class _SignupState extends State<Signup> {
                 borderRadius: BorderRadius.circular(30),
               ),
               child: TextField(
+                obscureText: true,
                 cursorColor: Colors.white,
+                style: TextStyle(color: Colors.white60),
                 controller: passwordController,
                 decoration: InputDecoration(border: InputBorder.none),
               ),
